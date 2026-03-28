@@ -6,19 +6,24 @@ class UserPassword
 {
     private string $password;
 
-    public function __construct(string $password)
+    public function __construct(string $hashedPassword)
     {
-        $normalizedPassword = trim($password);
+        $this->password = $hashedPassword;
+    }
 
-        if ($normalizedPassword === '') {
+    public static function fromPlainText(string $plainText): self
+    {
+        $normalized = trim($plainText);
+
+        if ($normalized === '') {
             throw InvalidUserPasswordExeption::becauseValueIsEmpty();
         }
 
-        if (strlen($normalizedPassword) < 8) {
+        if (strlen($normalized) < 8) {
             throw InvalidUserPasswordExeption::becauseValueIsTooShort(8);
         }
 
-        $this->password = $normalizedPassword;
+        return new self(password_hash($normalized, PASSWORD_BCRYPT));
     }
 
     public function passwordValue(): string
@@ -37,7 +42,7 @@ class UserPassword
     }
 
 
-    
+
 }
 
 

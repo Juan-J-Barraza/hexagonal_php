@@ -4,9 +4,9 @@ declare(strict_types=1);
 require_once __DIR__ . '/../../../Domain/ValueObjects/UserId.php';
 
 
-interface UpdateUserPort
+interface DeleteUserPort
 {
-    public function update(UserId $userId): void;
+    public function delete(UserId $userId): void;
 }
 
 

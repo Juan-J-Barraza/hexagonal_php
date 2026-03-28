@@ -26,6 +26,10 @@ class UserPassword
         return new self(password_hash($normalized, PASSWORD_BCRYPT));
     }
 
+    public function verifyPlainPassword(string $plainText): bool
+    {
+        return password_verify($plainText, $this->password);
+    }
     public function passwordValue(): string
     {
         return $this->password;

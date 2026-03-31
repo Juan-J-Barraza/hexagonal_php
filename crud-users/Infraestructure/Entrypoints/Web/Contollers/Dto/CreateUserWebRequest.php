@@ -9,7 +9,6 @@ final class CreateUserWebRequest
     private string $email;
     private string $password;
     private string $role;
-    private string $status;
 
     public function __construct(
         string $id,
@@ -17,14 +16,12 @@ final class CreateUserWebRequest
         string $email,
         string $password,
         string $role,
-        string $status
     ) {
         $this->id = trim($id);
         $this->name = trim($name);
         $this->email = trim($email);
         $this->password = trim($password);
         $this->role = trim($role);
-        $this->status = trim($status);
     }
 
     public function getId(): string
@@ -52,10 +49,7 @@ final class CreateUserWebRequest
         return $this->role;
     }
 
-    public function getStatus(): string
-    {
-        return $this->status;
-    }
+
 }
 
 ?>

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/../Ports/In/LoginUseCase.php';
 require_once __DIR__ . '/../Ports/Out/GetUserByEmailPort.php';
-require_once __DIR__ . '/Dto/Commands/LoginCommand.php';
+require_once __DIR__ . '/DTO/Commands/LoginCommand.php';
 require_once __DIR__ . '/../../Domain/Models/UserModel.php';
 require_once __DIR__ . '/../../Domain/ValueObjects/UserEmail.php';
 require_once __DIR__ . '/../../Domain/Enums/UserStatusEnum.php';

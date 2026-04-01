@@ -3,10 +3,10 @@ declare(strict_types=1);
 require_once __DIR__ . '/../Dto/CreateUserWebRequest.php';
 require_once __DIR__ . '/../Dto/UpdateUserWebRequest.php';
 require_once __DIR__ . '/../Dto/UserResponse.php';
-require_once __DIR__ . '/../../../../../Application/Services/Dto/Commands/CreateUserCommand.php';
-require_once __DIR__ . '/../../../../../Application/Services/Dto/Commands/UpdateUserCommand.php';
-require_once __DIR__ . '/../../../../../Application/Services/Dto/Commands/DeleteUserCommand.php';
-require_once __DIR__ . '/../../../../../Application/Services/Dto/Queries/GetUserByIdQuery.php';
+require_once __DIR__ . '/../../../../../Application/Services/DTO/Commands/CreateUserCommand.php';
+require_once __DIR__ . '/../../../../../Application/Services/DTO/Commands/UpdateUserCommand.php';
+require_once __DIR__ . '/../../../../../Application/Services/DTO/Commands/DeleteUserCommand.php';
+require_once __DIR__ . '/../../../../../Application/Services/DTO/Queries/GetUserByIdQuery.php';
 require_once __DIR__ . '/../../../../../Domain/Models/UserModel.php';
 final class UserWebMapper
 {

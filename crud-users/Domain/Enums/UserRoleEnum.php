@@ -6,7 +6,7 @@ require_once __DIR__ . '/../Exeptions/InvalidUserRoleExeption.php';
 
 class UserRoleEnum
 {
-    const ADMIN = 'admin';
+    const ADMIN = 'ADMIN';
     const MEMBER = 'MEMBER';
     const REVIEWER = 'REVIEWER';
 

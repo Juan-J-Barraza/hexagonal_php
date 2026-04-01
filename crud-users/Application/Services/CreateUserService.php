@@ -5,7 +5,7 @@ require_once __DIR__ . '/../Ports/In/CreateUserUseCase.php';
 require_once __DIR__ . '/../Ports/Out/SaveUserPort.php';
 require_once __DIR__ . '/../Ports/Out/GetUserByEmailPort.php';
 require_once __DIR__ . '/Mappers/UserAplicationMapper.php';
-require_once __DIR__ . '/../../Domain/Exceptions/UserAlreadyExistsException.php';
+require_once __DIR__ . '/../../Domain/Exeptions/UserAlreadyExistExeption.php';
 require_once __DIR__ . '/../../Domain/ValueObjects/UserEmail.php';
 
 

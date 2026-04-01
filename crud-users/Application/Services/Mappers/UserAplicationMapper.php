@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-require_once __DIR__ . '/../Dto/Commands/CreateUserCommand.php';
-require_once __DIR__ . '/../Dto/Commands/UpdateUserCommand.php';
-require_once __DIR__ . '/../Dto/Commands/DeleteUserCommand.php';
-require_once __DIR__ . '/../Dto/Queries/GetUserByIdQuery.php';
+require_once __DIR__ . '/../DTO/Commands/CreateUserCommand.php';
+require_once __DIR__ . '/../DTO/Commands/UpdateUserCommand.php';
+require_once __DIR__ . '/../DTO/Commands/DeleteUserCommand.php';
+require_once __DIR__ . '/../DTO/Queries/GetUserByIdQuery.php';
 
 require_once __DIR__ . '/../../../Domain/Models/UserModel.php';
 require_once __DIR__ . '/../../../Domain/ValueObjects/UserId.php';

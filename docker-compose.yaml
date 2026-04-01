@@ -1,0 +1,57 @@
+
+
+services:
+  
+  mysqlDB:
+    container_name: dbmysql
+    image: mysql:8
+    ports:
+      - "3434:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${PASSWORD_DB_ROOT}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${USER_DB}
+      MYSQL_PASSWORD: ${PASSWORD_USER}
+    volumes:
+      - data-mysql:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./seed.sql:/docker-entrypoint-initdb.d/seed.sql
+    restart: always
+    networks:
+      - sales
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+  
+
+  app-sales:
+    container_name: crud-users
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "9000:80"
+    env_file:
+      - ./.env
+    depends_on:
+      mysqlDB:
+        condition: service_healthy
+    networks:
+      - sales
+    restart: always
+    volumes:
+      - ./:/var/www/html
+    
+
+
+
+
+volumes:
+  data-mysql:
+
+
+networks:
+  sales:
+    driver: bridge

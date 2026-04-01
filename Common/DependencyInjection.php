@@ -11,11 +11,11 @@ final class DependencyInjection
     {
         ClassLoader::loadClass('Connection');
         return new Connection(
-            host: '127.0.0.1',
-            port: 3306,
-            database: 'crud_usuarios',
-            username: 'root',
-            password: '',
+            host: getenv('DB_HOST') ?: 'mysqlDB',
+            port: (int) (getenv('DB_PORT') ?: 3306),
+            database: getenv('DB_NAME') ?: 'crud_users',
+            username: getenv('USER_DB') ?: 'admin',
+            password: getenv('PASSWORD_USER') ?: '12345',
             charset: 'utf8mb4'
         );
     }
